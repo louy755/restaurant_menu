@@ -1,0 +1,42 @@
+<%= form_for(fooditem) do |f| %>
+  <% if fooditem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fooditem.errors.count, "error") %> prohibited this fooditem from being saved:</h2>
+
+      <ul>
+      <% fooditem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form_group">
+    <%= f.label :name, class: "form-control-lable" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :description, class: "form-control-lable" %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :price, class: "form-control-lable" %>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :section, class: "form-control-lable" %>
+    <%= f.text_field :section, class: "form-control" %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :remote_image_url, class: "form-control-lable" %>
+    <%= f.text_field :remote_image_url, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
